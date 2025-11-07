@@ -93,29 +93,35 @@ const HtmlViewer = ({ onAction }: HtmlViewerProps) => {
   }, [onAction]);
 
   return (
-    <div className="flex flex-col md:flex-row gap-4 h-full">
+    <div className="flex flex-col md:flex-row gap-6 h-full">
       <div className="flex-1 flex flex-col">
-        <div className="bg-card rounded-lg border border-border p-2 mb-2">
-          <span className="text-sm font-medium text-muted-foreground">HTML Code Editor</span>
+        <div className="bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 px-4 py-3 mb-3 shadow-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-primary/60"></div>
+            <span className="text-sm font-semibold text-foreground">HTML Code Editor</span>
+          </div>
         </div>
         <Textarea
           value={htmlCode}
           onChange={(e) => setHtmlCode(e.target.value)}
-          placeholder="Put your HTML text here"
-          className="flex-1 font-mono text-sm bg-editor-bg text-foreground resize-none"
+          placeholder="Put your HTML text here..."
+          className="flex-1 font-mono text-sm bg-editor-bg/95 backdrop-blur-sm text-foreground resize-none rounded-xl border border-border/50 shadow-2xl focus-visible:ring-primary/50 transition-all"
           style={{ minHeight: "500px" }}
         />
       </div>
 
       <div className="flex-1 flex flex-col">
-        <div className="bg-card rounded-lg border border-border p-2 mb-2">
-          <span className="text-sm font-medium text-muted-foreground">Live Preview</span>
+        <div className="bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 px-4 py-3 mb-3 shadow-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-accent/60"></div>
+            <span className="text-sm font-semibold text-foreground">Live Preview</span>
+          </div>
         </div>
-        <div className="flex-1 bg-preview-bg rounded-lg border border-border overflow-auto">
+        <div className="flex-1 bg-preview-bg rounded-xl border border-border/50 overflow-auto shadow-2xl">
           <iframe
             srcDoc={htmlCode}
             title="HTML Preview"
-            className="w-full h-full"
+            className="w-full h-full rounded-xl"
             style={{ minHeight: "500px" }}
             sandbox="allow-scripts"
           />
