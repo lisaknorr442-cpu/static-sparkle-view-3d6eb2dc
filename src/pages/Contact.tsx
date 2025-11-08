@@ -23,12 +23,15 @@ const Contact = () => {
     setFormData({ name: "", email: "", subject: "", message: "" });
   };
 
+  const base = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const canonical = `${base}contact`;
+
   return (
     <>
       <Helmet>
         <title>Contact Us - HTML Online Viewer Support</title>
         <meta name="description" content="Get in touch with HTML Online Viewer team. Ask questions, report bugs, or suggest features. We're here to help with your HTML editing needs." />
-        <link rel="canonical" href="https://yourdomain.com/contact" />
+        <link rel="canonical" href={canonical} />
       </Helmet>
       
       <div className="container mx-auto p-6 max-w-4xl">

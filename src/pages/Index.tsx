@@ -12,12 +12,14 @@ const Index = () => {
     setTimeout(() => setCurrentAction(""), 100);
   };
 
+  const canonical = `${window.location.origin}${import.meta.env.BASE_URL}`;
+
   return (
     <>
       <Helmet>
         <title>HTML Online Viewer - Free HTML Editor & Live Preview Tool 2025</title>
         <meta name="description" content="Free online HTML viewer and editor with instant live preview. Test, format, import, export HTML code in your browser. Perfect for web developers and students." />
-        <link rel="canonical" href="https://yourdomain.com/" />
+        <link rel="canonical" href={canonical} />
       </Helmet>
       
       <div className="flex h-screen overflow-hidden">

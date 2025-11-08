@@ -27,12 +27,15 @@ const About = () => {
     }
   ];
 
+  const base = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const canonical = `${base}about`;
+
   return (
     <>
       <Helmet>
         <title>About HTML Online Viewer - Free HTML Editor Tool</title>
         <meta name="description" content="Learn about HTML Online Viewer - the free online HTML editor with live preview. Discover features, benefits, and how our tool helps developers test HTML code instantly." />
-        <link rel="canonical" href="https://yourdomain.com/about" />
+        <link rel="canonical" href={canonical} />
       </Helmet>
       
       <div className="container mx-auto p-6 max-w-4xl">

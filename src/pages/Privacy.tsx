@@ -3,12 +3,14 @@ import { Card } from "@/components/ui/card";
 import AdSense from "@/components/AdSense";
 
 const Privacy = () => {
+  const base = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const canonical = `${base}privacy`;
   return (
     <>
       <Helmet>
         <title>Privacy Policy - HTML Online Viewer</title>
         <meta name="description" content="Read our privacy policy to understand how HTML Online Viewer handles your data. We process all HTML in your browser with no data collection." />
-        <link rel="canonical" href="https://yourdomain.com/privacy" />
+        <link rel="canonical" href={canonical} />
       </Helmet>
       
       <div className="container mx-auto p-6 max-w-4xl">
