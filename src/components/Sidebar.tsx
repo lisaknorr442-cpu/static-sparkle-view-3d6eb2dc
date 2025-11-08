@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import AdSense from "@/components/AdSense";
+import logo from "@/assets/logo.png";
 import { 
   Eye, 
   Code2, 
@@ -48,10 +49,8 @@ const Sidebar = ({ onAction }: SidebarProps) => {
   return (
     <aside className="w-64 bg-sidebar-background/95 backdrop-blur-xl border-r border-sidebar-border/50 flex flex-col h-full">
       <div className="p-6 border-b border-sidebar-border/50">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          HTML Viewer
-        </h1>
-        <p className="text-xs text-muted-foreground mt-1">Modern & Fast</p>
+        <img src={logo} alt="HTML Viewer" className="w-full h-auto" />
+        <p className="text-xs text-muted-foreground mt-2 text-center">Modern & Fast</p>
       </div>
 
       <nav className="flex-1 overflow-y-auto p-4">
