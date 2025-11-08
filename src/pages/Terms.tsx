@@ -3,7 +3,8 @@ import { Card } from "@/components/ui/card";
 import AdSense from "@/components/AdSense";
 
 const Terms = () => {
-  const base = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const base = `${origin}${import.meta.env.BASE_URL || "/"}`;
   const canonical = `${base}terms`;
   return (
     <>

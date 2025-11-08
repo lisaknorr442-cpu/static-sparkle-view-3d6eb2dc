@@ -12,7 +12,7 @@ const Index = () => {
     setTimeout(() => setCurrentAction(""), 100);
   };
 
-  const canonical = `${window.location.origin}${import.meta.env.BASE_URL}`;
+  const canonical = (typeof window !== "undefined" ? `${window.location.origin}` : "") + (import.meta.env.BASE_URL || "/");
 
   return (
     <>
