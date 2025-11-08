@@ -123,7 +123,7 @@ const HtmlViewer = ({ onAction }: HtmlViewerProps) => {
             title="HTML Preview"
             className="w-full h-full rounded-xl"
             style={{ minHeight: "500px" }}
-            sandbox="allow-scripts"
+            sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals"
           />
         </div>
       </div>
